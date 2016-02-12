@@ -1,5 +1,7 @@
 # c-begin
 
+[![Build Status](https://travis-ci.org/shlomif/c-begin.svg?branch=master)](https://travis-ci.org/shlomif/c-begin)
+
 Resources for C, C++, etc. beginners.
 
 Also see [the Wikia wiki](http://c-begin.wikia.com/wiki/C_and_C%2B%2B_Beginners_Wiki) .
