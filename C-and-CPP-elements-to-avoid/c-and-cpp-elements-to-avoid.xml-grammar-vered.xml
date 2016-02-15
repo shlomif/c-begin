@@ -189,7 +189,7 @@ For example, there is one in this code to shuffle a deck of cards:
 <bad_code syntax="c">
 for (int i = 0; i &lt; 52; i++)
 {
-    int j = i + int(rand(52-i));
+    const int j = i + rand() % (52-i);
     swap(cards[i], cards[j]);
 }
 </bad_code>
@@ -202,7 +202,7 @@ const int deck_size = 52;
 
 for (int i = 0; i &lt; deck_size; i++)
 {
-    int j = i + int(rand(deck_size-i));
+    int j = i + rand() % (deck_size - i);
     swap(cards[i], cards[j]);
 }
 </code_blk>
