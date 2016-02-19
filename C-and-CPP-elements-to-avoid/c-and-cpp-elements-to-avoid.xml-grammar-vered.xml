@@ -501,10 +501,17 @@ or an object oriented interface instead.
 <info>
 <title>Using Global Variables or Function-"static" Variables</title>
 </info>
+
 <p>
-<b>TODO : FILL IN</b> - bad for multi-threading, re-entrancy, instantiation,
-etc.
+It is a good idea to avoid global variables or static variables inside
+functions; at least those that are not constant. This is because using such
+variables interferes with
+<a xlink:href="http://en.wikipedia.org/wiki/Thread_%28computing%29#Multithreading">multithreading</a>,
+re-entrancy and prohibits instantiation. If you need to use several common
+variables, then define an environment struct or class and pass a pointer to
+it to each of the functions.
 </p>
+
 </item>
 
 <item xml:id="declaring_all_vars_at_top">
