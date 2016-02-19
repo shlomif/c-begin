@@ -243,49 +243,56 @@ sure your tab key expands to a constant number of spaces. You may also wish
 to make use of auto-formatters like <a xlink:href="http://en.wikipedia.org/wiki/Indent_%28Unix%29">GNU indent</a> to properly format your code.
 </p>
 </item>
+
 <item xml:id="several_synchronised_arrays">
 <info>
 <title>Several synchronised arrays.</title>
 </info>
+
 <p>
 <b>TODO : FILL IN</b>
 Related to “varvarname” is the desire of some beginners to use several
 different arrays with synchronised content, so the same index at every array
 will contain a different piece of data for the same record:
 </p>
-<bad_code syntax="perl">
-my @names;
-my @addresses;
-my @ages;
-my @phone_numbers;
+
+<bad_code syntax="c">
+char * names[ITEMS_COUNT];
+char * addresses[ITEMS_COUNT];
+int ages[ITEMS_COUNT];
+char * phone_numbers[ITEMS_COUNT];
 
 .
 .
 .
 
-push @names, 'Isaac Newton';
-push @addresses, '10 Downing St.';
-push @ages, 25;
-push @phone_numbers, '123456789';
+names[num] = strdup("Isaac Newton");
+addresses[num] = strdup("10 Downing St.");
+ages[num] = 25;
+phone_numbers[num] = strdup("123456789");
 </bad_code>
+
 <p>
 These arrays will become hard to synchronise, and this is error prone. A
 better idea would be to use an array (or a different data structure) of
-hash references or objects:
+structs, classes, or pointers to them:
 </p>
-<code_blk syntax="perl">
-my @people;
 
-push @people, Person->new(
-    {
-        name => 'Isaac Newton',
-        address => '10 Downing St.',
-        age => 25,
-        phone_number => '123456789',
-    },
+<code_blk syntax="c">
+
+Person * people[ITEMS_COUNT];
+
+num = 0;
+people[num++] = create_person(
+    "Isaac Newton",
+    "10 Downing St.",
+    25,
+    "123456789"
 );
 </code_blk>
+
 </item>
+
 <item xml:id="modifying_iterated_data_structures">
 <info>
 <title>Modifying data structures while iterating through them.</title>
