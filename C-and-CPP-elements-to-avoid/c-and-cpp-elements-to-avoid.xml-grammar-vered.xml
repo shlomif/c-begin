@@ -122,14 +122,38 @@ good idea to precede each paragraph with a comment explaining what it does, or
 to extract it into its own function or method.
 </p>
 </item>
+
 <item xml:id="lowercase_modules_and_pkgs">
 <info>
 <title>Don't start Classes with a Lowercase Letter</title>
 </info>
+
 <p>
-In C++, classes <b>TODO: FILL IN</b>.
+In C++, classes should start with an uppercase letter (see
+<a xlink:href="http://en.wikipedia.org/wiki/Letter_case">the Wikipedia
+article about letter case</a>) and starting them with a lowercase letter
+is not recommended.
 </p>
+
+<bad_code syntax="cpp">
+class my_class
+{
+    .
+    .
+    .
+};
+</bad_code>
+
+<code_blk syntax="cpp">
+class MyClass
+{
+    .
+    .
+    .
+};
+</code_blk>
 </item>
+
 <item xml:id="non-intrusive-commenting">
 <info>
 <title>Avoid Intrusive Commenting</title>
