@@ -250,7 +250,6 @@ to make use of auto-formatters like <a xlink:href="http://en.wikipedia.org/wiki/
 </info>
 
 <p>
-<b>TODO : FILL IN</b>
 Related to “varvarname” is the desire of some beginners to use several
 different arrays with synchronised content, so the same index at every array
 will contain a different piece of data for the same record:
