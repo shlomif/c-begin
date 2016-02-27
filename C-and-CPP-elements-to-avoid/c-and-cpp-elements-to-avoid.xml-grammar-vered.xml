@@ -946,7 +946,10 @@ TODO : FILL IN.
 </info>
 
 <p>
-<b>TODO : FILL IN</b>
+Buffer overflows involve reading or writing after one end of the buffer
+and can lead to exploitation, or crashes. More information can be found in
+<a xlink:href="http://en.wikipedia.org/wiki/Buffer_overflow">the Wikipedia
+article</a>.
 </p>
 
 </item>
