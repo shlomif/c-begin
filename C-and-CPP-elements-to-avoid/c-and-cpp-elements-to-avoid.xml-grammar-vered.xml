@@ -373,8 +373,8 @@ English identifiers and comments.
 One can often see C++ code with <code>using namespace std;</code> on top, but that is
 a bad idea. The C++ standard requires that the “std” namespace contain certain
 symbols, but it doesn't prevent it from containing <b>other</b> symbols
-(presumably, implementation details of the stdandard library). If you use
-<code>using namespace std;</code>, you never know what else you might also be
+(presumably, implementation details of the standard library). If you use
+<code>using namespace std;</code>, you neverknow what else you might also be
 bringing into the global namespace.
 </p>
 
