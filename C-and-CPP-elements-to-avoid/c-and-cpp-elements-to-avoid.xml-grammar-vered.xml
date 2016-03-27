@@ -184,7 +184,23 @@ prove of use.
 <title>Accessing Object Slots Directly</title>
 </info>
 <p>
-<b>TODO: FILL IN</b>
+It is a bad idea to access the slots/properties/members of an object or
+a pointer to it directly. E.g:
+</p>
+<bad_code syntax="cpp">
+obj->my_slot = 5;
+.
+.
+.
+if (my_obj.my_boolean_slot)
+{
+}
+</bad_code>
+<p>
+Instead, create accessors, readers and writers - see
+<a xlink:href="http://en.wikipedia.org/wiki/Mutator_method">mutator method</a>
+on the Wikipedia and
+<a xlink:href="http://perl-begin.org/tutorials/perl-for-newbies/part5/#page--accessors--DIR">the class Accessors</a> section of the Perl for Newbies tutorial.
 </p>
 </item>
 <item xml:id="caret_and_dollar_sign_in_regexes">
