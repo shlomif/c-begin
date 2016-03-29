@@ -1,6 +1,6 @@
 DOCBOOK5_XHTML_BASE = as-xhtml
 DOCBOOK5_XHTML = $(DOCBOOK5_XHTML_BASE)/index.html
-DOCBOOK5_DOC = c-and-cpp-elements-to-avoid.docbook5.xml
+DOCBOOK5_DOC = docbook5/c-and-cpp-elements-to-avoid.docbook5.xml
 
 all: $(DOCBOOK5_XHTML) $(DOCBOOK5_DOC)
 
