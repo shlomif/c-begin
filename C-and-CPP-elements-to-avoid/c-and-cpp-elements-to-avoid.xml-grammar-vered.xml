@@ -532,22 +532,54 @@ it to each of the functions.
 
 <item xml:id="declaring_all_vars_at_top">
 <info>
-<title>Declaring all variables at the top</title>
+<title>Declaring all variables at the top (Pre-declarations)</title>
 </info>
 <p>
-<b>TODO : FILL IN</b>
-Some inexperienced Perl programmers, possibly by influence from languages
-such as C, like to declare all variables used by the program at the top of
-the program or the relevant subroutines. Like so:
+If you are writing C++ or C starting from the C99 standard onwards (which
+isn’t supported by some non-standard-compliant compilers such as Microsoft’s
+Visual C++), then you should avoid declaring all the variables at the top
+of the program or the subroutine (a practice that is referred to as
+“pre-declaration”) and instead declare them when they are needed
+and with an immediate initialisation/definition using the
+<code>=</code> operator.
+</p>
+
+<p>
+E.g:
 </p>
 <bad_code syntax="c">
-TODO : FILL IN
+int main(int argc, char * argv[])
+{
+    const char * name;
+    int i;
+
+    name = "Rupert";
+    for (i=1 ; i&lt;=10 ; i++)
+    {
+        printf ("Hello %s - No. %d!\n", name, i);
+    }
+
+    return 0;
+}
 </bad_code>
+
 <p>
-However, this is bad form in Perl, and the preferable way is to declare all
-the variables when they are first used, and at the innermost scope where they
-should retain their value. This will allow to keep track of them better.
+Should be replaced with:
 </p>
+
+<code_blk syntax="c">
+int main(int argc, char * argv[])
+{
+    const char * const name = "Ruper";
+    for (int i=1 ; i&lt;=10 ; i++)
+    {
+        printf ("Hello %s - No. %d!\n", name, i);
+    }
+
+    return 0;
+}
+</code_blk>
+
 </item>
 <item xml:id="trailing-whitespace">
 <info>
