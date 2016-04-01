@@ -570,7 +570,7 @@ Should be replaced with:
 <code_blk syntax="c">
 int main(int argc, char * argv[])
 {
-    const char * const name = "Ruper";
+    const char * const name = "Rupert";
     for (int i=1 ; i&lt;=10 ; i++)
     {
         printf ("Hello %s - No. %d!\n", name, i);
