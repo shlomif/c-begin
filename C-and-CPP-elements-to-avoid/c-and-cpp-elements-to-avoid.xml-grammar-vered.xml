@@ -666,17 +666,18 @@ CPAN modules:
 <title>Code and Markup Injection</title>
 </info>
 <p>
-<b>TODO : FILL IN</b>
 Care must be taken when constructing statements that are passed to an
-interpreter, when putting arbitrary strings inside (using string interpolation
+interpreter, when putting arbitrary strings inside (using substring expansion
 or other methods). This is because if the strings are subject to input from
 the outside world (including the users), then one can use specially crafted
 strings for executing arbitrary commands and exploiting the system.
 </p>
 <p>
 An example of this is outputting HTML using
-<code>print "&lt;p&gt;" . $paragraph_text . "&lt;/p&gt;\n";</code> which may allow
-inserting arbitrary, malicious, markup inside <code>$paragraph_text</code>,
+<code>fprintf(file_handle, "&lt;p&gt;%s&lt;/p&gt;\n", paragraph_text);</code>
+or <code>my_file_fh &lt;&lt; "&lt;p&gt;" &lt;&lt; paragraph_text &lt;&lt; "&lt;/p&gt;" &lt;&lt; std::endl;</code>
+which may allow
+inserting arbitrary, malicious, markup inside <code>paragraph_text</code>,
 which may include malicious JavaScript, that can steal passwords or alter
 the page’s contents.
 </p>
@@ -686,8 +687,8 @@ For more information, see:
 <ol>
 <li>
 <p>
-<a xlink:href="../../topics/security/code-markup-injection/">“Code/Markup Injection
-and Its Prevention”</a> resource on this site.
+<a xlink:href="http://perl-begin.org/topics/security/code-markup-injection/">“Code/Markup
+Injection and Its Prevention”</a> resource on the Perl beginners site.
 </p>
 </li>
 <li>
