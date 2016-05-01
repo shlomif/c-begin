@@ -713,7 +713,14 @@ injections.
 <title>Using Undeclared Symbols</title>
 </info>
 <p>
-<b>TODO : FILL IN</b>
+Some C or C++ compilers allow one to use functions or variables that have not
+been declared, while automatically inferring their types to be “int” or
+whatever. However, for good measure, all variables and functions should be
+declared with a proper type because they are often not the same as
+the compiler's guess. One can configure GCC and similar compilers to emit
+an error on such cases using the
+<code>-Werror=implicit-function-declaration</code> flag, which is recommended
+to add to one's build system.
 </p>
 </item>
 <item xml:id="decls_not_in_common_headers">
