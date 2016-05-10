@@ -983,7 +983,7 @@ different modern standard. For more information, see
 </info>
 <p>
 If you want to group a certain sub-expression in a
-<a xlink:href="$(ROOT)/topics/regular-expressions/">regular expression</a>,
+<a xlink:href="http://perl-begin.org/topics/regular-expressions/">regular expression</a>,
 without the need to capture it (into the <code>$1</code>, <code>$2</code>,
 <code>$3</code>, etc. variables and related capture variables), then
 you should cluster them using <code>(?: … )</code> instead of capturing
@@ -1126,7 +1126,7 @@ document</a> written earlier for the Perl programming language.
 
 <li>
 <p>
-<a xlink:href="$(ROOT)/books/advanced/#pbp">The
+    <a xlink:href="http://perl-begin.org/books/advanced/#pbp">The
 Book "Perl Best Practices"</a> by Damian Conway - contains a lot of good
 advice and food for thought, but sometimes should be deviated from.
 Also see the
