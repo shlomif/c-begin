@@ -957,11 +957,13 @@ quality assurance in C.
 </item>
 <item xml:id="parsing_using_regex">
 <info>
-<title>Parsing XML/HTML/JSON/CSV/etc. using regular expressions</title>
+<title>Parsing XML/HTML/JSON/CSV/etc. without a tried-and-tested parser</title>
 </info>
 <p>
 You should not try to parse HTML, XML, JSON, CSV, and other complex grammars
-using regular expressions. Instead, use a parsing library. <b>TODO : FILL IN</b>
+using regular expressions, or worse - using manual character/string
+tokenisation. Instead, use a tried and tested parsing library, which you should
+be able to find using a web search.
 </p>
 </item>
 <item xml:id="generating_non_valid_markup">
