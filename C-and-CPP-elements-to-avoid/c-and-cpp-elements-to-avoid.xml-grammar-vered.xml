@@ -994,18 +994,6 @@ at all if it's needed. That is because using a cluster is faster and cleaner
 and better conveys your intentions than using a capture.
 </p>
 
-<bad_code syntax="c">
-TODO : FILL IN.
-</bad_code>
-
-<p>
-A better code would be:
-</p>
-
-<code_blk syntax="c">
-TODO : FILL IN.
-</code_blk>
-
 </item>
 
 <item xml:id="buffer_overflows">
@@ -1028,7 +1016,33 @@ article</a>.
 </info>
 
 <p>
-<b>TODO : FILL IN</b>
+When passing a non-literal-constant string as the first parameter to
+“printf()”/sprintf()” and friends, one runs the risk of
+<a xlink:href="http://en.wikipedia.org/wiki/Uncontrolled_format_string">format
+string vulnerabilities</a> (more information in the link). As a result, it
+is important to always use a literal constant string to format the string. E.g:
+</p>
+
+<bad_code syntax="c">
+fgets(str,sizeof(str), stdin);
+str[sizeof(str)-1] = '\0';
+printf(str);
+</bad_code>
+
+<p>
+should be replaced with:
+</p>
+
+<code_blk syntax="c">
+fgets(str,sizeof(str), stdin);
+str[sizeof(str)-1] = '\0';
+printf("%s", str);
+</code_blk>
+
+<p>
+One can also use the
+<a xlink:href="http://stackoverflow.com/questions/9707569/c-array-warning-format-not-a-string-literal">relevant
+warning flags</a> of GCC and compatible compilers to warn and possibly generate an error for that.
 </p>
 
 </item>
