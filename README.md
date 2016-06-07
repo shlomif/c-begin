@@ -20,3 +20,9 @@ To build it, you'll need:
 3. [docmake](http://www.shlomifish.org/open-source/projects/docmake/).
 
 4. The [DocBook 5/XML](https://en.wikipedia.org/wiki/DocBook) Toolchain.
+
+## License
+
+Copyright by Shlomi Fish, 2016.
+
+The license for this work is the [Creative Commons Attribution 4.0-or-above](http://creativecommons.org/licenses/by/4.0/) (CC-by) license.
