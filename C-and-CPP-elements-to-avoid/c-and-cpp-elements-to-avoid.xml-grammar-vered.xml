@@ -1053,9 +1053,32 @@ warning flags</a> of GCC and compatible compilers to warn and possibly generate 
 </info>
 
 <p>
-Sometimes called a "baton".
-<b>TODO : FILL IN</b>
+When writing C (and sometimes C++) code, make sure that whenever you accept
+a function pointer as a callback, that it also accepts a
+<code>void *</code> context variable, which would be passed to the function
+as well. These variables are sometimes called “batons” because they are
+passed around. Without this convention, it will be harder to instantiate
+routines based on this interface, and multi-threading will be harder without
+the use of thread-local-storage.
 </p>
+
+<p>
+So don't do that:
+</p>
+
+<bad_code syntax="c">
+void my_sort(my_type * const array, const size_t count,
+    int (*compare)(my_type *, my_type *));
+</bad_code>
+
+<p>
+And instead do that:
+</p>
+
+<code_blk syntax="c">
+void my_sort(my_type * const array, const size_t count,
+    int (*compare)(my_type *, my_type *, void *), void * const context);
+</code_blk>
 
 </item>
 
