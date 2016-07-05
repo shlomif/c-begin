@@ -11,6 +11,8 @@ Also see [the Wikia wiki](http://c-begin.wikia.com/wiki/C_and_C%2B%2B_Beginners_
 Under the “C-and-CPP-elements-to-avoid/” directory one can find the XML
 source for a document about C and C++ elements to avoid.
 
+One can [*view it online*](https://github.com/shlomif/c-begin).
+
 To build it, you'll need:
 
 1. [GNU make](https://www.gnu.org/software/make/make.html).
