@@ -4,13 +4,7 @@ before_install:
     - sudo apt-get update -qq
     - sudo apt-get install -y ack-grep cpanminus docbook-defguide docbook-xsl libperl-dev libxml-libxml-perl libxml-libxslt-perl make perl xsltproc
     - sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-      # For cmake-3.x - probably not needed in trusty.
-      # - sudo add-apt-repository ppa:george-edison55/precise-backports -y
-install:
-      # - sudo easy_install3 pip
-      # - /usr/bin/env python3 -m sys -m random2 -c 'print(sys.executable)'
     - sudo cpanm XML::Grammar::Vered App::XML::DocBook::Docmake
-
 perl:
     - "5.22"
 python:
