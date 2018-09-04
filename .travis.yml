@@ -1,12 +1,16 @@
+{$travis-cache}
 os: linux
 dist: trusty
 before_install:
-    - sudo apt-get update -qq
-    - sudo apt-get install -y ack-grep cpanminus docbook-defguide docbook-xsl libperl-dev libxml-libxml-perl libxml-libxslt-perl make perl xsltproc
-    - sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-    - sudo cpanm XML::Grammar::Vered App::XML::DocBook::Docmake
+    - bash .travis.bash --cmd before_install
+    - eval "$(perl -Mlocal::lib=$HOME/perl_modules)"
+    - bash .travis.bash --cmd install
+    - cpanm File::Find::Object::Rule IO::All XML::Grammar::Screenplay
+    - git clone https://github.com/shlomif/screenplays-common
 perl:
     - "5.22"
 python:
     - "3.5"
-script: "cd C-and-CPP-elements-to-avoid/ && make"
+script:
+    - bash .travis.bash --cmd build
+sudo: required
