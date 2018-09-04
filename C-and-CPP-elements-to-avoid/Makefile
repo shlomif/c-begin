@@ -9,3 +9,6 @@ $(DOCBOOK5_DOC): c-and-cpp-elements-to-avoid.xml-grammar-vered.xml
 
 $(DOCBOOK5_XHTML): $(DOCBOOK5_DOC)
 	docmake -v -o $(DOCBOOK5_XHTML_BASE) -x lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl xhtml-1_1 "$<"
+
+test: all
+	prove tests/*.t
