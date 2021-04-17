@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use XML::Grammar::Vered;
+use XML::Grammar::Vered ();
 
 use Getopt::Long qw/GetOptions/;
 
