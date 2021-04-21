@@ -16,4 +16,3 @@ google_color_url = "008000";
   src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
     </div>
-

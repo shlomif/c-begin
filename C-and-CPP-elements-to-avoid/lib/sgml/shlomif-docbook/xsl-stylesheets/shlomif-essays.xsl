@@ -1,14 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml" version='1.0'>
+    <xsl:param name="docmake.output.work_in_progress"></xsl:param>
     <xsl:param name="use.id.as.filename">1</xsl:param>
     <xsl:param name="html.stylesheet">style.css</xsl:param>
     <xsl:param name="itemizedlist.propagates.style">1</xsl:param>
-    <xsl:param name="chunker.output.doctype-public">-//W3C//DTD XHTML 1.0 Transitional//EN</xsl:param>
-    <xsl:param name="chunker.output.doctype-system">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</xsl:param>
     <!-- Parameters for Generating Strict Output. See:
     http://www.sagehill.net/docbookxsl/OtherOutputForms.html#StrictXhtmlValid
     -->
-    <xsl:param name="css.decoration">0</xsl:param>
     <xsl:param name="ulink.target"></xsl:param>
     <xsl:param name="use.viewport">0</xsl:param>
     <!-- End of Strict Params -->
@@ -37,12 +35,6 @@
              </xsl:attribute>
          </xsl:if>
 
-
-      <xsl:if test="$css.decoration != 0">
-        <xsl:attribute name="type">
-          <xsl:call-template name="list.itemsymbol"/>
-        </xsl:attribute>
-      </xsl:if>
 
       <xsl:if test="@spacing='compact'">
         <xsl:attribute name="compact">
