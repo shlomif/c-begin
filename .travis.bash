@@ -22,19 +22,37 @@ then
 
 elif test "$cmd" = "before_install"
 then
-    sudo apt-get update -qq
-    sudo apt-get --no-install-recommends install -y ack-grep cpanminus dbtoepub docbook-defguide docbook-xsl libperl-dev libxml-libxml-perl libxml-libxslt-perl make perl tidy xsltproc
-    sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-    cpanm local::lib
+
+    if test -e /etc/lsb-release
+    then
+        . /etc/lsb-release
+        sudo add-apt-repository -y ppa:inkscape.dev/stable
+        sudo apt -q update
+        sudo apt -y install inkscape
+    fi
+    cpanm --local-lib=~/perl_modules local::lib
+    if test "$DISTRIB_ID" = 'Ubuntu'
+    then
+        if test "$DISTRIB_RELEASE" = '14.04'
+        then
+            sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+        fi
+        eval "$(GIMME_GO_VERSION=1.13 gimme)"
+    elif test -e /etc/fedora-release
+    then
+        sudo dnf --color=never install -y hspell-devel perl-devel ruby-devel
+    fi
+
 
 elif test "$cmd" = "install"
 then
-    cpanm --notest Alien::Tidyp YAML::XS
-    bash -x bin/install-tidyp-systemwide.bash
-    cpanm --notest HTML::Tidy
+    cpanm --notest YAML::XS
+    cpanm HTML::T5 Test::HTML::Tidy::Recursive::Strict
     h=~/Docs/homepage/homepage
     mkdir -p "$h"
     git clone https://github.com/shlomif/shlomi-fish-homepage "$h/trunk"
+    sudo -H `which python3` -m pip install cookiecutter
+    ( cd "$h/trunk" && perl bin/my-cookiecutter.pl )
 
 elif test "$cmd" = "build"
 then
