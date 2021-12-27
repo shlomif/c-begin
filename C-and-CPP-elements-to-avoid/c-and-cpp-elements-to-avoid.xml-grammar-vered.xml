@@ -84,7 +84,29 @@ Someone gave me this GCC warnings’ theme:
 
 <code_blk syntax="bash">
 #!/bin/bash
-gcc -std=c99 -Wall -W -Wformat-nonliteral -Wcast-align -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Winline -Wundef -Wnested-externs -Wcast-qual -Wshadow -Wwrite-strings -Wunused -Wfloat-equal -pedantic -ansi -Wbad-function-cast  -Wmissing-declarations -Wmissing-prototypes  -Wnested-externs  -Wold-style-definition -Wstrict-prototypes -Wdeclaration-after-statement
+gcc \
+    -std=c99 \
+    -ansi \
+    -pedantic \
+    -W \
+    -Wall \
+    -Wbad-function-cast \
+    -Wcast-align \
+    -Wcast-qual \
+    -Wdeclaration-after-statement \
+    -Wfloat-equal \
+    -Wformat-nonliteral \
+    -Winline \
+    -Wmissing-declarations \
+    -Wmissing-prototypes \
+    -Wnested-externs \
+    -Wold-style-definition \
+    -Wpointer-arith \
+    -Wshadow \
+    -Wstrict-prototypes \
+    -Wundef \
+    -Wunused \
+    -Wwrite-strings
 </code_blk>
 
 </item>
